@@ -4,7 +4,7 @@ import pandas as pd
 # Define the connection to your SQL Server database
 conn = pyodbc.connect('Driver={SQL Server};'
                       'Server=ALISHA_SHAHID\\ALISHA_KHAN;'
-                      'Database=NWBD2;'
+                      'Database=lab03DB;'
                       'Trusted_Connection=yes;')
 
 cursor = conn.cursor()
@@ -23,11 +23,13 @@ csv_files = {
     'Orders': f'{csv_path}\\Orders.csv'
 }
 
-# Function to insert data from CSV into the respective table
+
 # Function to insert data from CSV into the respective table
 def insert_data_from_csv(table_name, csv_file):
     # Use on_bad_lines to skip problematic lines
-    df = pd.read_csv(csv_file, on_bad_lines='warn')  # Change here
+    df = pd.read_csv(csv_file, on_bad_lines='skip')
+
+    #df = pd.read_csv(csv_file, on_bad_lines='warn')  # Change here
     for index, row in df.iterrows():
         try:
             # Create placeholders for the query and retrieve column names from the CSV

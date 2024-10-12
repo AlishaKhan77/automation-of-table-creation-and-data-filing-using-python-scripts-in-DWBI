@@ -3,7 +3,7 @@ import pyodbc
 # Define the connection to your SQL Server database
 conn = pyodbc.connect('Driver={SQL Server};'
                       'Server=ALISHA_SHAHID\\ALISHA_KHAN;'  # e.g., 'localhost' or 'SQLServerInstance'
-                      'Database=NWBD2;'  # e.g., 'Northwind_DW'
+                      'Database=lab03DB;'  # e.g., 'Northwind_DW'
                       'Trusted_Connection=yes;')
 
 cursor = conn.cursor()
