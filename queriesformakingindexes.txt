@@ -1,0 +1,25 @@
+-- Primary Key (PK) Indexes
+CREATE INDEX idx_Orders_OrderID
+ON Orders(OrderID);
+
+CREATE INDEX idx_Customers_CustomerID
+ON Customers(CustomerID);
+
+CREATE INDEX idx_Suppliers_SupplierID
+ON Suppliers(SupplierID);
+
+CREATE INDEX idx_Products_ProductID
+ON Products(ProductID);
+
+CREATE INDEX idx_Employees_EmployeeID
+ON Employees(EmployeeID);
+
+-- Non-Primary Key (Non-PK) Indexes
+CREATE INDEX idx_Customers_CompanyName
+ON Customers(CompanyName);
+
+CREATE INDEX idx_Shippers_CompanyName
+ON Shippers(CompanyName);
+
+CREATE INDEX idx_Orders_OrderDate
+ON Orders(OrderDate);
